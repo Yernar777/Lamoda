@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    {% for products in product%}
+    <div class="div1"><img class="img1" src="{{products.img.url}}" alt="{{products.name}}"></div>
+    <p class="p1">{{products.price}}</p>
+    <h2 class="hh1">{{products.name}}</h2>
+    <p class="p2">{{products.descriptions}}</p>
+    {% endfor%}
+</body>
+</html>

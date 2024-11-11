@@ -1,11 +1,29 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
-    <h1>hello lamoda</h1>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            {% for lam in categoryes%}
+          <div class="swiper-slide">
+            <div class="lam_div2">
+                <div><img class="img2" src="{{lam.img.url}}" alt="{{lam.name}}"></div>
+                <div class="pod_lam2"><a class="a1" href="{% url 'lamoda_category' lam.id%}"><p>{{lam.name}}</p></a></div>
+            </div>
+          </div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    {% endfor%}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
