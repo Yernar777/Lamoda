@@ -9,6 +9,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
+    <div class="main">
+        <div class="shapka1">
+            <div><img src="{% static 'img\navigation_ly9ulwehu3or_32.png'%}" alt=""></div>
+            <div class="podshapka2"><a class="a2" href="">г.Шымкент,ст.Шымк...</a></div>
+        </div>
+        <div class="shapka2">
+            <div class="shapka3">
+                <div><img src="{% static 'img\veshalka_we92d1aoog4w_32.png'%}" alt=""></div>
+                <div><a class="a3" href="">Доставка примеркой</a></div>
+            </div>
+            <div class="shapka4">
+                <div><img src="{% static 'img\bankovskaya_karta_x0d39e3jb6l7_32.png'%}" alt=""></div>
+                <div><a href="">Платите когда хотите</a></div>
+            </div>
+        </div>
+    </div>
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             {% for lam in categoryes%}
@@ -18,12 +34,21 @@
                 <div class="pod_lam2"><a class="a1" href="{% url 'lamoda_category' lam.id%}"><p>{{lam.name}}</p></a></div>
             </div>
           </div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
+          {% endfor%}
         </div>
         <div class="swiper-pagination"></div>
       </div>
-    {% endfor%}
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 10,
+          spaceBetween: 10,
+          centeredSlides: false,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
 </body>
 </html>
