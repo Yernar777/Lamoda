@@ -70,14 +70,35 @@ body {
     object-fit: cover;
 }
 .main{
-    background-color: black;
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 65px;
 }
 .shapka1{
     display: flex;
     align-items: center;
+    /* margin-left: 50px; */
 }
 .a2{
-    color: white;
+    /* color: white; */
+    text-decoration: none;
+}
+.shapka3{
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+}
+.shapka4{
+    display: flex;
+    align-items: center;
+}
+.shapka2{
+    display: flex;
+}
+.a3{
+    text-decoration: none;
+}
+.a4{
     text-decoration: none;
 }
