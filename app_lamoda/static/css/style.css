@@ -70,35 +70,123 @@ body {
     object-fit: cover;
 }
 .main{
+    background-color: black;
     width: 100%;
     display: flex;
     justify-content: space-around;
-    height: 65px;
+    height: 55px;
 }
 .shapka1{
     display: flex;
     align-items: center;
     /* margin-left: 50px; */
+    gap: 15px;
 }
 .a2{
     /* color: white; */
     text-decoration: none;
+    color: white;
 }
 .shapka3{
     display: flex;
     align-items: center;
     margin-right: 25px;
+    gap: 15px;
 }
 .shapka4{
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 .shapka2{
     display: flex;
 }
 .a3{
     text-decoration: none;
+    color: white;
 }
 .a4{
     text-decoration: none;
+    color: white;
+}
+.shapka_img1{
+    width: 24px;
+}
+.shapka_img2{
+    width: 24px;
+}
+.shapka_img3{
+    width: 24px;
+}
+.main2{
+    width: 86%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+.mid_shapka1{
+    display: flex;
+    gap: 15px;
+    /* align-items: center; */
+}
+.mid_shapka1 a{
+    text-decoration: none;
+    color: gray;
+    font-size: 17px;
+}
+.mid_shapka3{
+    display: flex;
+    gap: 30px;
+}
+.b1{
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.mid_shapka4{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.mid_shapka4 img{
+    transition: opacity 0.3s ease;
+}
+.mid_shapka4:hover img{
+    opacity: 0.5;
+    /* background-color: black; */
+}
+.mid_shapka4 a{
+    text-decoration: none;
+    color: black;
+}
+.mid_shapka3 button{
+    transition: opacity 0.3s ease;
+}
+.mid_shapka3:hover button{
+    opacity: 0.5;
+}
+.mid_shapka1 a{
+    transition: filter 0.3s ease;
+}
+.mid_shapka1:hover a{
+    filter: invert(100%);
+}
+.mid_shapka2{
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+.custom-a{
+    display: inline-block;
+    transform: rotate(10deg);
+    position: relative;
+}
+.custom-b{
+    display: inline-block;
+    transform: rotate(10deg); /* Наклон для буквы a */
+    position: relative;
+    top: 5px;
 }
