@@ -15,3 +15,18 @@ class LamodaCategory(models.Model):
     price = models.IntegerField()
     old_price = models.IntegerField()
     category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True,blank=True)
+
+
+class LamodaShapka(models.Model):
+    name = models.CharField(max_length=50)
+    descriptions = models.TextField()
+    img = models.ImageField(upload_to= 'upload',blank=True,null=True)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True,blank=True)
+
+
+class LamodaShapka1(models.Model):
+    name = models.CharField(max_length=50)
+    descriptions = models.TextField()
+    img = models.ImageField(upload_to= 'upload',blank=True,null=True)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True,blank=True)
+    

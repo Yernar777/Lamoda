@@ -57,10 +57,37 @@
         <div><a href="">Sale%</a></div>
       </div>
       <div class="end_shapka2">
-        <div><button class="b2">Поиск</button></div>
+        <!-- <div><button class="b2">Поиск</button></div> -->
+        <div><input type="text" placeholder="Поиск" class="b2"></div>
         <div><button class="b3"><img class="img3" src="{% static 'img\lupa_e21304v2ar9z_16.png'%}" alt=""></button></div>
       </div>
     </div>
+
+    <div class="start_major1">
+      <div class="start_major2">
+        <div class="swiper1 mySwiper1">
+          <div class="swiper-wrapper1">
+            {% for shap in shapkyes%}
+            <div class="swiper-slide1">
+              <div><img src="{{shap.img.url}}" alt="{{shap.name}}"></div>
+              <div>{{shap.name}}</div>
+              <div>{{shap.descriptions}}</div>
+            </div>
+          {% endfor%}
+        </div> 
+      </div>
+      </div>
+      <div class="start_major3">
+          {% for shap1 in shapkyes1%}
+          <div><img src="{{shap1.img.url}}" alt="{{shap1.name}}"></div>
+          <div>{{shap1.name}}</div>
+          <div>{{shap1.descriptions}}</div> <br>
+          {% endfor%}
+      </div>
+    </div>
+      <div class="swiper-pagination1"></div>
+    </div>
+
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             {% for lam in categoryes%}
@@ -74,6 +101,7 @@
         </div>
         <div class="swiper-pagination"></div>
       </div>
+      
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
@@ -82,6 +110,17 @@
           centeredSlides: false,
           pagination: {
             el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
+      <script>
+        var swiper = new Swiper(".mySwiper1", {
+          slidesPerView: "auto",
+          centeredSlides: true,
+          spaceBetween: 30,
+          pagination: {
+            el: ".swiper-pagination1",
             clickable: true,
           },
         });
