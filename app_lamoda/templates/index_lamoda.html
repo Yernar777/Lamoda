@@ -32,7 +32,7 @@
         <div><a href="">Детям</a></div>
       </div>
       <div class="mid_shapka2">
-        <div><h1><span class="custom-a">L</span><span class="custom-b">a</span> moda</h1></div>
+        <div><h1><span class="custom-a">l</span><span class="custom-b">a</span> moda</h1></div>
       </div>
       <div class="mid_shapka3">
           <div><button class="b1">Войти</button></div>
@@ -53,8 +53,8 @@
         <div><a href="">Спорт</a></div>
         <div><a href="">Красота</a></div>
         <div><a href="">Дом</a></div>
-        <div><a href="">Made in KZ</a></div>
-        <div><a href="">Sale%</a></div>
+        <div><a href=""><span>Made in KZ</span></a></div>
+        <div><a href=""><span>Sale%</span></a></div>
       </div>
       <div class="end_shapka2">
         <!-- <div><button class="b2">Поиск</button></div> -->
@@ -69,9 +69,9 @@
           <div class="swiper-wrapper1">
             {% for shap in shapkyes%}
             <div class="swiper-slide1">
-              <div><img src="{{shap.img.url}}" alt="{{shap.name}}"></div>
-              <div>{{shap.name}}</div>
-              <div>{{shap.descriptions}}</div>
+              <div class="start_div4"><img src="{{shap.img.url}}" alt="{{shap.name}}"></div>
+              <div class="start_div5">{{shap.name}}</div>
+              <div class="start_div6">{{shap.descriptions}}</div>
             </div>
           {% endfor%}
         </div> 
@@ -79,9 +79,9 @@
       </div>
       <div class="start_major3">
           {% for shap1 in shapkyes1%}
-          <div><img src="{{shap1.img.url}}" alt="{{shap1.name}}"></div>
-          <div>{{shap1.name}}</div>
-          <div>{{shap1.descriptions}}</div> <br>
+          <div class="start_div1"><img src="{{shap1.img.url}}" alt="{{shap1.name}}"></div>
+          <div class="start_div2">{{shap1.name}}</div>
+          <div class="start_div3">{{shap1.descriptions}}</div> <br>
           {% endfor%}
       </div>
     </div>
@@ -100,6 +100,21 @@
           {% endfor%}
         </div>
         <div class="swiper-pagination"></div>
+      </div>
+      <div class="end">
+        <div class="futor_end1">
+          <div class="futor_end2">
+            <div><h1>Скидка 10% за подписку <br> на новинки и акции</h1></div>
+          </div>
+          <div class="futor_end3">
+            <div><h1>Помощь</h1></div>
+            <div><a href="">Статус заказа по номеру</a></div>
+            <div><a href="">Мои заказы</a></div>
+            <div><a href="">Условия доставки</a></div>
+            <div><a href="">Возврат</a></div>
+          </div>
+          <div class="futor_end4"></div>
+        </div>
       </div>
       
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
