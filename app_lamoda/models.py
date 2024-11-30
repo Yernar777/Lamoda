@@ -30,3 +30,7 @@ class LamodaShapka1(models.Model):
     img = models.ImageField(upload_to= 'upload',blank=True,null=True)
     category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True,blank=True)
     
+
+
+class Review1(models.Model):
+    email = models.EmailField()
