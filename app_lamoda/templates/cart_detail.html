@@ -1,37 +1,44 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
-<body>
-    <h1>Корзина</h1>
-    <ul>
+<body class="body1">
+    <div class="cart-container">
+        <h1>Корзина</h1>
         {% if cart.items.all %}
-        <ul>
+        <ul class="cart-list">
             {% for item in cart.items.all %}
-            <li>
-                {{ item.product.name }} - {{ item.quantity }} x {{ item.product.price }} = {{ item.get_total_price }}
-                <form action="{% url 'increase_quantity' item.id %}" method="post" style="display: inline;">
-                    {% csrf_token %}
-                    <button type="submit">Увеличить</button>
-                </form>
-                <form action="{% url 'decrease_quantity' item.id %}" method="post" style="display: inline;">
-                    {% csrf_token %}
-                    <button type="submit">Уменьшить</button>
-                </form>
-                <form action="{% url 'remove_from_cart' item.id %}" method="post" style="display: inline;">
-                    {% csrf_token %}
-                    <button type="submit">Удалить</button>
-                </form>
+            <li class="cart-item">
+                <span class="item-name">{{ item.product.name }}</span>
+                <span class="item-quantity">{{ item.quantity }} x {{ item.product.price }} тг</span>
+                <span class="item-total">= {{ item.get_total_price }} тг</span>
+                <div class="item-actions">
+                    <form action="{% url 'increase_quantity' item.id %}" method="post" class="action-form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn increase">+</button>
+                    </form>
+                    <form action="{% url 'decrease_quantity' item.id %}" method="post" class="action-form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn decrease">−</button>
+                    </form>
+                    <form action="{% url 'remove_from_cart' item.id %}" method="post" class="action-form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn remove">Удалить</button>
+                    </form>
+                </div>
             </li>
             {% endfor %}
         </ul>
-        <p>Общая сумма {{ total_price }} тг</p>
+        <p class="cart-total">Общая сумма: <span>{{ total_price }}</span> тг</p>
+        {% else %}
+        <p class="cart-empty">Ваша корзина пуста</p>
         {% endif %}
-    </ul>
-    <a href="{% url 'home' %}">На главную страницу</a>
-    
+        <a href="{% url 'home' %}" class="btn home">На главную</a>
+    </div>
 </body>
 </html>
