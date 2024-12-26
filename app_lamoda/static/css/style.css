@@ -58,6 +58,7 @@ body {
     background: #fff;
     display: flex;
     justify-content: center;
+    gap: 40px;
     align-items: center;
     width: 86%;
     margin: 0 auto;
@@ -142,7 +143,7 @@ body {
 }
 .b1{
     border-radius: 5px;
-    width: 80px;
+    width: 110px;
     height: 30px;
     border: 1px solid black;
     cursor: pointer;
@@ -356,7 +357,7 @@ h1 {
     display: inline-block;
     margin-top: 20px;
     text-align: center;
-    background-color: #007bff;
+    background-color: black;
     padding: 10px 15px;
     color: #fff;
     text-decoration: none;
@@ -385,4 +386,74 @@ h1 {
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+
+
+.order-title {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.order-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+.but1{
+    height: 35px;
+    width: 107px;
+    margin-top: 20px;
+    color: white;
+    background-color: black;
+    border: 0px;
+    border-radius: 5px;
+}
+.div_detail{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.but2{
+    height: 30px;
+    width: 165px;
+    margin-top: 10px;
+    color: white;
+    background-color: black;
+    border: 0px;
+    border-radius: 10px;
 }

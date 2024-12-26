@@ -35,7 +35,7 @@
         <div><h1><span class="custom-a">l</span><span class="custom-b">a</span> moda</h1></div>
       </div>
       <div class="mid_shapka3">
-          <div><button class="b1">Войти</button></div>
+          <div><a href="{% url 'register' %}"><button class="b1">Регистрация</button></a></div>
           <div class="mid_shapka4">
             <div><img class="shapka_img4" src="{% static 'img\package_f0dl3tkhcbh6_32.png'%}" alt=""></div>
             <div><a href="">Корзина</a></div>
@@ -89,15 +89,17 @@
 
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            {% for lam in categoryes%}
           <div class="swiper-slide">
+
+            {% for lam in categoryes%}
             <div class="lam_div2">
                 <div><img class="img2" src="{{lam.img.url}}" alt="{{lam.name}}"></div>
                 <div class="pod_lam2"><a class="a1" href="{% url 'lamoda_category' lam.id%}"><p>{{lam.name}}</p></a></div>
             </div>
-          </div>
           {% endfor%}
         </div>
+      </div>
+
         <div class="swiper-pagination"></div>
       </div>
       <div class="end">

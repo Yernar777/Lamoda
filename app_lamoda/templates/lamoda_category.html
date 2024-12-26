@@ -15,7 +15,7 @@
     <p class="p2">{{products.descriptions}}</p>
     <form action="{% url 'add_to_cart' products.id %}" method="post">
         {% csrf_token %}
-        <button type="submit">Добавить в корзину</button>
+        <button  class="but2" type="submit">Добавить в корзину</button>
     </form>
     {% endfor%}
 </body>

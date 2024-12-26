@@ -10,4 +10,8 @@ urlpatterns = [
     path('cart/increase/<int:item_id>/', views.increase_quantity, name='increase_quantity'),
     path('cart/decrease/<int:item_id>/', views.decrease_quantity, name='decrease_quantity'),
     path('cart/remove/<int:item_id>/', views.remove_from_cart, name='remove_from_cart'),
+    path('checkout/', views.checkout, name='checkout'),
+    path('order-success/', views.order_success, name='order_success'),
+    path('register/', views.index_lamoda, name='register'),
+    path('login/', views.login, name='login'),
 ]

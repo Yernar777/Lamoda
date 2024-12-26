@@ -74,3 +74,73 @@ def remove_from_cart(request, item_id):
     cart_item = get_object_or_404(CartItem, id=item_id)
     cart_item.delete()  
     return redirect('cart_detail')
+
+
+
+
+
+def checkout(request):
+    cart = get_object_or_404(Cart, user=request.user)
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            order = form.save(commit=False)
+            order.user = request.user
+            order.total_price = sum(item.get_total_price() for item in cart.items.all())
+            order.save()
+
+
+            for item in cart.items.all():
+                OrderItem.objects.create(
+                    order=order,
+                    product=item.product,
+                    quantity=item.quantity
+                )
+            
+            cart.items.all().delete()
+            return redirect('order_success')
+    else:
+        form = OrderForm()
+    return render(request, 'checkout.html', {'form': form, 'cart': cart})
+
+def order_success(request):
+    return render(request, 'order_success.html')
+
+
+
+
+
+
+def index_lamoda(request):
+    form = UserForm()
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('order_success')
+    context = {'form':form,}
+    return render(request, 'registration1.html',context=context)
+
+
+
+
+
+def login_view(request):
+    form = LoginForm(request, data = request.POST)
+    if form.is_valid():
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request,username=username,password=password)
+
+        if user is not None:
+            auth.login(request,user)
+            return redirect('home')
+    context ={'form':form}
+
+    return render(request, 'login.html',context=context)
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')

@@ -38,7 +38,12 @@
         {% else %}
         <p class="cart-empty">Ваша корзина пуста</p>
         {% endif %}
-        <a href="{% url 'home' %}" class="btn home">На главную</a>
+        <div class="div_detail">
+            <a href="{% url 'home' %}" class="btn home">На главную</a>
+            <form action="{% url 'checkout'%}" method="get" >
+                <button class="but1" type="submit">Оформить заказ</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
